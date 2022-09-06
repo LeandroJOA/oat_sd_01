@@ -1,6 +1,5 @@
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -9,26 +8,30 @@ import java.time.format.DateTimeFormatter;
 import java.util.Vector;
 
 public class Servidor extends Thread {
-    private Socket conexao;
+    private final Socket conexao;
 
-    private static Vector<DataOutputStream> vetSaidaEconomia = new Vector<DataOutputStream>();
-    private static Vector<DataOutputStream> vetSaidaEntretenimento = new Vector<DataOutputStream>();
-    private static Vector<DataOutputStream> vetSaidaTecnologia = new Vector<DataOutputStream>();
+    private static final Vector<DataOutputStream> vetSaidaEconomia = new Vector<>();
+    private static final Vector<DataOutputStream> vetSaidaEntretenimento = new Vector<>();
+    private static final Vector<DataOutputStream> vetSaidaTecnologia = new Vector<>();
 
     public Servidor(Socket socket) {
         conexao = socket;
     }
 
-    public static void main(String[] args) throws IOException {
-        ServerSocket servidor = new ServerSocket(8657);
+    public static void main(String[] args) {
+        try {
+            ServerSocket servidor = new ServerSocket(8657);
 
-        while(true) {
-            System.out.println("Esperando cliente se conectar...");
+            while(true) {
+                System.out.println("Esperando cliente se conectar...");
 
-            Socket conexao = servidor.accept();
+                Socket conexao = servidor.accept();
 
-            Thread thread = new Servidor(conexao);
-            thread.start();
+                Thread thread = new Servidor(conexao);
+                thread.start();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
