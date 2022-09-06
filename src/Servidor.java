@@ -47,7 +47,6 @@ public class Servidor extends Thread {
         String assunto;
 
         try {
-            System.out.println("Cliente conectado!");
 
             DataOutputStream saida_cliente = new DataOutputStream(conexao.getOutputStream());
             BufferedReader entrada_cliente = new BufferedReader(
@@ -55,6 +54,7 @@ public class Servidor extends Thread {
             );
 
             nome_cliente = entrada_cliente.readLine();
+            System.out.println("Cliente " + nome_cliente + " conectado!");
 
             saida_cliente.writeBytes("### Seja bem-vindo " + nome_cliente + " !" + "\n");
 
@@ -73,7 +73,7 @@ public class Servidor extends Thread {
                     todosClientes = vetSaidaEntretenimento;
                     assunto = "Entretenimento";
                     break;
-                case "3":
+                default:
                     vetSaidaTecnologia.add(saida_cliente);
                     todosClientes = vetSaidaTecnologia;
                     assunto = "Tecnologia";
