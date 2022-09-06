@@ -33,7 +33,7 @@ public class Servidor extends Thread {
     }
 
     private String dataHora() {
-        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("HH:mm");
         return dateTimeFormatter.format(LocalDateTime.now());
     }
 
@@ -53,7 +53,7 @@ public class Servidor extends Thread {
 
             nome_cliente = entrada_cliente.readLine();
 
-            saida_cliente.writeBytes("### Seja bem-vindo " + nome_cliente + " !");
+            saida_cliente.writeBytes("### Seja bem-vindo " + nome_cliente + " !" + "\n");
 
             assunto = entrada_cliente.readLine();
 
@@ -78,7 +78,7 @@ public class Servidor extends Thread {
             }
 
             for (int i = 0; i < todosClientes.size(); i++) {
-                todosClientes.get(i).writeBytes(nome_cliente + " entrou no chat de " + assunto + " - " + dataHora());
+                todosClientes.get(i).writeBytes("Servidor: " + nome_cliente + " entrou no chat de " + assunto + " - " + dataHora() + "\n");
             }
 
             msg_recebida = entrada_cliente.readLine();
@@ -90,7 +90,7 @@ public class Servidor extends Thread {
             ) {
                 System.out.println(nome_cliente + ": " + msg_recebida);
 
-                msg_enviada = dataHora() + " - " + nome_cliente + ": " + msg_recebida + '\n';
+                msg_enviada = assunto + ": " + msg_recebida + " (" + dataHora() + ")" + '\n';
 
                 for (int i = 0; i < todosClientes.size(); i++) {
                     if (todosClientes.get(i) != saida_cliente) {
