@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="50d3a4cf-eff0-43e8-ba15-96d46895bc45" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OAT2/src/Cliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OAT2/src/Cliente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Servidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Servidor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OAT2/Servidor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OAT2/Servidor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cliente.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,11 +38,12 @@
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "1.8",
     "last_opened_file_path": "C:/Users/jvvlo/OneDrive/Área de Trabalho/Unidesc/sistemas Distribuidos/OAT1",
-    "nodejs_package_manager_path": "npm"
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
   <component name="RunManager" selected="Application.Cliente">
-    <configuration name="Cliente" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Cliente" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="src.Cliente" />
       <module name="OAT2" />
       <extension name="coverage">
@@ -61,6 +63,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Cliente" />
+      <item itemvalue="Application.Servidor" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Cliente" />
@@ -78,7 +84,7 @@
       <updated>1664246322313</updated>
       <workItem from="1664246323460" duration="53000" />
       <workItem from="1664317675246" duration="116000" />
-      <workItem from="1664318016496" duration="2736000" />
+      <workItem from="1664318016496" duration="3541000" />
     </task>
     <servers />
   </component>

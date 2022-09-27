@@ -48,7 +48,7 @@ public class Cliente {
             msg_recebida = new String(receivePacket.getData());
 
             // Imprime na console o dado recebido
-            System.out.println("Servidor: " + msg_recebida);
+            System.out.println("Servidor: " + msg_recebida.trim());
 
         }
         // Fecha o cliente

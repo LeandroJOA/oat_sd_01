@@ -27,7 +27,7 @@ public class Servidor {
             int port = receivePacket.getPort();
 
             // Transforma mensagem recebida em string de bytes
-            sendData = msg_recebida.trim().getBytes();
+            sendData = msg_recebida.getBytes();
 
             // Monta o pacote de retorno ao cliente
             DatagramPacket sendPacket =
