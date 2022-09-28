@@ -23,6 +23,7 @@ public class Servidor {
 
             // Recupera os dados, o IP e a porta do cliente
             String msg_recebida = new String(receivePacket.getData());
+            System.out.println("Cliente: " + msg_recebida.trim());
             InetAddress IPAddress = receivePacket.getAddress();
             int port = receivePacket.getPort();
 
@@ -35,6 +36,7 @@ public class Servidor {
 
             // Envia dados ao cliente
             serverSocket.send(sendPacket);
+            receiveData = new byte[1024];
         }
 
 
